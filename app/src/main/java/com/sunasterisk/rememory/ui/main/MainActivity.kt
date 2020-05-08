@@ -1,7 +1,8 @@
-package com.sunasterisk.rememory
+package com.sunasterisk.rememory.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.sunasterisk.rememory.R
 
 class MainActivity : AppCompatActivity() {
 
