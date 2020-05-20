@@ -1,11 +1,7 @@
 package com.sunasterisk.rememory.ui.alarm
 
 interface AlarmContract {
-    interface View{
+    interface View
 
-    }
-
-    interface Presenter{
-
-    }
+    interface Presenter
 }

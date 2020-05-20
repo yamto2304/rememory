@@ -1,11 +1,7 @@
 package com.sunasterisk.rememory.ui.addaction
 
 interface AddActionContract{
-    interface View{
+    interface View
 
-    }
-
-    interface Presenter{
-
-    }
+    interface Presenter
 }
