@@ -1,12 +1,8 @@
 package com.sunasterisk.rememory.ui.summary
 
 interface SummaryContract {
-    interface View{
+    interface View
 
-    }
-
-    interface Presenter{
-
-    }
+    interface Presenter
 }
 
