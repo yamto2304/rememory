@@ -18,11 +18,9 @@
         </activity>
         <activity android:name=".ui.main.MainActivity"/>
         <activity android:name=".ui.addaction.AddActionActivity"/>
-        <activity android:name=".ui.alarm.AlarmActivity"/>
         <activity android:name=".ui.classify.ClassifyActivity"/>
         <activity android:name=".ui.evaluate.EvaluateActivity"/>
         <activity android:name=".ui.daydetails.DayDetailsActivity"/>
-        <activity android:name=".ui.summary.SummaryActivity"/>
     </application>
 
 </manifest>
