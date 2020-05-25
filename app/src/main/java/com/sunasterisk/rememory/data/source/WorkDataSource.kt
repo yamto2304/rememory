@@ -12,7 +12,7 @@ interface WorkDataSource {
 
         fun deleteWork(workId: String, callback: OnDataLoadedCallback<Boolean>)
 
-        fun updateWork(task: Work, callback: OnDataLoadedCallback<Work>)
+        fun updateWork(work: Work, callback: OnDataLoadedCallback<Work>)
     }
 
     interface Remote

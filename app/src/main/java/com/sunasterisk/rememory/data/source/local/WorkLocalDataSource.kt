@@ -23,11 +23,11 @@ class WorkLocalDataSource private constructor(
         }.execute(work)
     }
 
-    override fun deleteWork(id: String, callback: OnDataLoadedCallback<Boolean>) {
+    override fun deleteWork(workId: String, callback: OnDataLoadedCallback<Boolean>) {
         TODO("Not yet implemented")
     }
 
-    override fun updateWork(task: Work, callback: OnDataLoadedCallback<Work>) {
+    override fun updateWork(work: Work, callback: OnDataLoadedCallback<Work>) {
         TODO("Not yet implemented")
     }
 
