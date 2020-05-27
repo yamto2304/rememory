@@ -3,4 +3,5 @@
     <string name="title_home">Home</string>
     <string name="title_history">History</string>
     <string name="title_alarms">Alarms</string>
+    <string name="title_no_data">You have no data !</string>
 </resources>

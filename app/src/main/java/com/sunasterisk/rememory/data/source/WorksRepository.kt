@@ -7,6 +7,9 @@ class WorksRepository private constructor(
     private val local: WorkDataSource.Local
 ) : WorkDataSource.Local {
 
+    override fun getAllWorks(callback: OnDataLoadedCallback<List<Work>>){
+        local.getAllWorks(callback)
+    }
     override fun getWorks(workId: String, callback: OnDataLoadedCallback<List<Work>>) {
         local.getWorks(workId, callback)
     }

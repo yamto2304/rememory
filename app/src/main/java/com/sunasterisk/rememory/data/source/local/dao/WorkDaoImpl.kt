@@ -1,11 +1,26 @@
 package com.sunasterisk.rememory.data.source.local.dao
 
 import com.sunasterisk.rememory.data.model.Work
+import com.sunasterisk.rememory.database.AppDatabase
 import com.sunasterisk.rememory.database.SQLiteHelper
 
 class WorkDaoImpl private constructor(helper: SQLiteHelper) : WorkDao {
     private val writableDatabase = helper.writableDatabase
     private val readableDatabase = helper.readableDatabase
+
+    override fun getAllWorks(): List<Work> {
+        val cursor =
+            readableDatabase.query(Work.TABLE_NAME, null, null, null, null, null, null).apply {
+                moveToFirst()
+            }
+        return mutableListOf<Work>().apply {
+            while (!cursor.isAfterLast) {
+                add(Work(cursor))
+                cursor.moveToNext()
+            }
+            cursor.close()
+        }
+    }
 
     override fun getWorks(workId: String): List<Work> {
         val cursor =

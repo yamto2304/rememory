@@ -3,6 +3,7 @@ package com.sunasterisk.rememory.data.source.local.dao
 import com.sunasterisk.rememory.data.model.Work
 
 interface WorkDao {
+    fun getAllWorks(): List<Work>
 
     fun getWorks(workId: String): List<Work>
 
