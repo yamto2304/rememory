@@ -11,6 +11,11 @@ class WorkLocalDataSource private constructor(
     private val workDao: WorkDao
 ) : WorkDataSource.Local {
 
+    override fun getAllWorks(callback: OnDataLoadedCallback<List<Work>>) {
+        LocalAsyncTask<EmptyInput, List<Work>>(callback){
+            workDao.getAllWorks()
+        }.execute(EmptyInput)
+    }
     override fun getWorks(workId: String, callback: OnDataLoadedCallback<List<Work>>) {
         LocalAsyncTask<EmptyInput, List<Work>>(callback) {
             workDao.getWorks(workId)

@@ -6,6 +6,8 @@ import com.sunasterisk.rememory.data.source.base.OnDataLoadedCallback
 interface WorkDataSource {
 
     interface Local {
+        fun getAllWorks(callback: OnDataLoadedCallback<List<Work>>)
+
         fun getWorks(workId: String, callback: OnDataLoadedCallback<List<Work>>)
 
         fun addWork(work: Work, callback: OnDataLoadedCallback<Boolean>)
