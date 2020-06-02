@@ -15,8 +15,8 @@ class HomeFragment : BaseFragment(), WorkContract.View {
 
     }
 
-    override fun showWorks(works: List<Work>){
-        if(works.isEmpty()){
+    override fun showWorks(works: List<Work>) {
+        if (works.isEmpty()) {
             linearNoTasksLayout.visibility = View.VISIBLE
             recycleViewWorksList.visibility = View.INVISIBLE
         } else {

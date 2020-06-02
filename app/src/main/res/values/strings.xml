@@ -4,4 +4,16 @@
     <string name="title_history">History</string>
     <string name="title_alarms">Alarms</string>
     <string name="title_no_data">You have no data !</string>
+    <string name="title_classify_work">Work</string>
+    <string name="title_classify_family">Family</string>
+    <string name="title_classify_relax">Relax</string>
+    <string name="title_classify_myself">Myself</string>
+    <string name="title_evaluate">Evaluate</string>
+    <string name="title_classify">Classify</string>
+    <string name="title_evaluate_rush">Is it Rush? </string>
+    <string name="title_evaluate_important">Is it Important? </string>
+    <string name="evaluate_rush">Rush !!!</string>
+    <string name="evaluate_not_rush">Not Rush</string>
+    <string name="evaluate_important">Important !!!</string>
+    <string name="evaluate_not_important">Not Important</string>
 </resources>
