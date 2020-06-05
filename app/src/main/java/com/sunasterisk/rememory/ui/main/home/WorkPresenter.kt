@@ -8,7 +8,8 @@ import java.lang.Exception
 class WorkPresenter(
     private val view: WorkContract.View,
     private val workRepo: WorksRepository
-) : WorkContract.Presenter {
+) : WorkContract.Presenter{
+
     override fun getAllWorks() {
         workRepo.getAllWorks(object : OnDataLoadedCallback<List<Work>> {
             override fun onSuccess(data: List<Work>) {

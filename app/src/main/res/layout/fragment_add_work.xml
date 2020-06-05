@@ -43,46 +43,56 @@
                 android:id="@+id/addWorkEditText"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_195"
-                android:layout_marginTop="@dimen/dp_50"
-                android:gravity="top"
+                android:layout_marginTop="@dimen/dp_25"
+                android:layout_marginStart="@dimen/dp_25"
+                android:layout_marginEnd="@dimen/dp_25"
+                android:gravity="center"
                 android:hint="@string/app_name"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/buttonEvaluate"
-                android:layout_width="@dimen/dp_120"
-                android:layout_height="@dimen/dp_100"
-                android:layout_marginTop="@dimen/dp_100"
-                android:layout_marginEnd="@dimen/dp_80"
-                android:text="@string/title_evaluate"
-                android:textSize="@dimen/sp_12"
+                android:id="@+id/buttonRushEvaluate"
+                android:layout_width="@dimen/dp_250"
+                android:layout_height="@dimen/dp_80"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@string/title_rush_evaluate"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/addWorkEditText"
-                tools:ignore="SpUsage" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buttonClassify" />
+
+            <Button
+                android:id="@+id/buttonImportantEvaluate"
+                android:layout_width="@dimen/dp_250"
+                android:layout_height="@dimen/dp_80"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@string/title_important_evaluate"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buttonRushEvaluate" />
 
             <Button
                 android:id="@+id/buttonClassify"
-                android:layout_width="@dimen/dp_120"
-                android:layout_height="@dimen/dp_100"
-                android:layout_marginStart="@dimen/dp_80"
-                android:layout_marginTop="@dimen/dp_100"
+                android:layout_width="@dimen/dp_250"
+                android:layout_height="@dimen/dp_80"
+                android:layout_marginTop="@dimen/dp_16"
                 android:text="@string/title_classify"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/addWorkEditText" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/floatingActionButton"
+                android:id="@+id/buttonAddNewWork"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dp_250"
-                android:layout_marginEnd="@dimen/dp_50"
+                android:layout_marginTop="@dimen/dp_195"
+                android:layout_marginEnd="@dimen/dp_16"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/addWorkEditText"
-                app:layout_constraintVertical_bias="1.0"
                 app:srcCompat="@drawable/ic_done_black_24dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,12 +4,12 @@ import android.content.ContentValues
 import android.database.Cursor
 
 data class Work(
-    val workId: String,
-    val workDetails: String,
-    val workDate: String,
-    val workProgress: Int,
-    val workEvaluate: String,
-    val workClassify: String
+    var workId: String = "",
+    var workDetails: String = "",
+    var workDate: String = "",
+    var workProgress: Int = 0,
+    var workEvaluate: String = "",
+    var workClassify: String = ""
 ) {
 
     constructor(cursor: Cursor) : this(
