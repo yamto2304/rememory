@@ -1,7 +1,14 @@
 package com.sunasterisk.rememory.ui.addwork
 
-interface AddWorkContract{
-    interface View
+import com.sunasterisk.rememory.data.model.Work
 
-    interface Presenter
+interface AddWorkContract{
+    interface View{
+        fun showNotify(notifyId: Int)
+        fun showError(exception: Exception)
+    }
+
+    interface Presenter{
+        fun addWork(work: Work)
+    }
 }

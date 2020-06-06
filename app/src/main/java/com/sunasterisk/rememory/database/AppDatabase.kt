@@ -26,16 +26,16 @@ object AppDatabase {
             "$COL_RUSH_EVALUATE TEXT, " +
             "$COL_IMPORTANT_EVALUATE TEXT)"
 
-    private const val TABLE_WORKS = "Works"
-    private const val COL_ID_WORK = "workId"
-    private const val COL_DETAILS_WORK = "workDetails"
-    private const val COL_DATE_WORK = "workDate"
-    private const val COL_PROGRESS_WORK = "workProgress"
-    private const val COL_EVALUATE_WORK = "workEvaluate"
-    private const val COL_CLASSIFY_WORK = "workClassify"
+    const val TABLE_WORKS = "Works"
+    const val COL_ID_WORK = "workId"
+    const val COL_DETAILS_WORK = "workDetails"
+    const val COL_DATE_WORK = "workDate"
+    const val COL_PROGRESS_WORK = "workProgress"
+    const val COL_EVALUATE_WORK = "workEvaluate"
+    const val COL_CLASSIFY_WORK = "workClassify"
 
     const val CREATE_TABLE_WORKS = "CREATE TABLE $TABLE_WORKS (" +
-            "$COL_ID_WORK IDENTITY(1,1) PRIMARY KEY, " +
+            "$COL_ID_WORK INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "$COL_DETAILS_WORK TEXT, " +
             "$COL_DATE_WORK TEXT, " +
             "$COL_PROGRESS_WORK TEXT, " +
@@ -47,6 +47,6 @@ object AppDatabase {
     private const val COL_PROGRESS_HISTORY = "progress"
 
     const val CREATE_TABLE_HISTORY = "CREATE TABLE $TABLE_HISTORY (" +
-            "$COL_DATE_HISTORY IDENTITY(1,1) PRIMARY KEY, " +
+            "$COL_DATE_HISTORY INTEGER PRIMARY KEY, " +
             "$COL_PROGRESS_HISTORY TEXT)"
 }

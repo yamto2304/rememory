@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/evaluateImportant"
+        android:title="@string/evaluate_important" />
+    <item
+        android:id="@+id/evaluateNotImportant"
+        android:title="@string/evaluate_not_important" />
+</menu>

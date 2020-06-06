@@ -8,7 +8,8 @@
     <string name="title_classify_family">Family</string>
     <string name="title_classify_relax">Relax</string>
     <string name="title_classify_myself">Myself</string>
-    <string name="title_evaluate">Evaluate</string>
+    <string name="title_rush_evaluate">Is it rush ?</string>
+    <string name="title_important_evaluate">Is it important ?</string>
     <string name="title_classify">Classify</string>
     <string name="title_evaluate_rush">Is it Rush? </string>
     <string name="title_evaluate_important">Is it Important? </string>
@@ -16,4 +17,6 @@
     <string name="evaluate_not_rush">Not Rush</string>
     <string name="evaluate_important">Important !!!</string>
     <string name="evaluate_not_important">Not Important</string>
+    <string name="notify_insert_success">Insert success !</string>
+    <string name="notify_insert_failed">Insert failed !</string>
 </resources>

@@ -31,10 +31,10 @@ class SQLiteHelper private constructor(context: Context, dbName: String, version
         private const val DATABASE_VERSION = 1
         private var instance: SQLiteHelper? = null
 
-        fun getInstance(context: Context) {
+        fun getInstance(context: Context) =
             instance ?: SQLiteHelper(context, DATABASE_NAME, DATABASE_VERSION).also {
                 instance = it
             }
-        }
+
     }
 }

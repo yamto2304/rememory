@@ -10,9 +10,10 @@ class WorkDaoImpl private constructor(helper: SQLiteHelper) : WorkDao {
 
     override fun getAllWorks(): List<Work> {
         val cursor =
-            readableDatabase.query(Work.TABLE_NAME, null, null, null, null, null, null).apply {
-                moveToFirst()
-            }
+            readableDatabase.query(AppDatabase.TABLE_WORKS, null, null, null, null, null, null)
+                .apply {
+                    moveToFirst()
+                }
         return mutableListOf<Work>().apply {
             while (!cursor.isAfterLast) {
                 add(Work(cursor))
@@ -36,8 +37,14 @@ class WorkDaoImpl private constructor(helper: SQLiteHelper) : WorkDao {
         }
     }
 
-    override fun addWork(work: Work): Boolean =
-        writableDatabase.insert(Work.TABLE_NAME, null, work.getContentValues()) > 0
+    override fun addWork(work: Work): Boolean {
+        return writableDatabase.insert(
+            AppDatabase.TABLE_WORKS,
+            null,
+            work.getContentValues()
+        ) > 0
+    }
+
 
     override fun deleteWork(id: Int): Boolean {
         TODO("Not yet implemented")
