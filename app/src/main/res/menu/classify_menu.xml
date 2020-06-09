@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/classifyWork"
+        android:title="@string/title_classify_work" />
+    <item
+        android:id="@+id/classifyFamily"
+        android:title="@string/title_classify_family" />
+    <item
+        android:id="@+id/classifyRelax"
+        android:title="@string/title_classify_relax" />
+    <item
+        android:id="@+id/classifyMyself"
+        android:title="@string/title_classify_myself" />
+</menu>

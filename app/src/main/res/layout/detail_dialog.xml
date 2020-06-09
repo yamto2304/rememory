@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/dp_350"
+    android:layout_height="@dimen/dp_500"
+    android:layout_gravity="center"
+    android:background="@color/color_app"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_5">
+
+
+    <Button
+        android:id="@+id/buttonClose"
+        android:layout_width="@dimen/sp_40"
+        android:layout_height="@dimen/sp_40"
+        android:layout_gravity="end"
+        android:text="@string/exit_string" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_5"
+        android:layout_marginStart="@dimen/dp_5"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/detailsWork"
+            android:layout_marginEnd="@dimen/dp_5"
+            android:layout_marginStart="@dimen/dp_5"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_195"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_16"
+            android:background="@drawable/border_edit_text"
+            android:backgroundTint="@color/color_white"
+            android:gravity="center"
+            android:text=""
+            android:textSize="@dimen/sp_40" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="ExtraText">
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="@dimen/dp_120"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_5"
+                android:gravity="center"
+                android:text="@string/time_create"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/dp_16"
+                android:textStyle="bold"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/timeCreate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_5"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/dp_16"
+                tools:ignore="SpUsage" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_5"
+        android:layout_marginStart="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_16"
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_100"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/classifyDetail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_detail"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/textSize" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_100"
+            android:layout_marginBottom="@dimen/dp_8"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/rushDetails"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_detail"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/textSize" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_100"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/importantDetails"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_detail"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/textSize" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginEnd="@dimen/dp_5"
+        android:layout_marginStart="@dimen/dp_5"
+        android:layout_height="@dimen/dp_50">
+
+        <Button
+            android:id="@+id/buttonEdit"
+            android:layout_width="@dimen/dp_160"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_5"
+            android:background="@drawable/border_edit_text"
+            android:text="@string/title_edit"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/buttonDelete"
+            android:layout_width="@dimen/dp_160"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_edit_text"
+            android:text="@string/title_delete"
+            tools:ignore="ButtonStyle" />
+    </LinearLayout>
+</LinearLayout>
