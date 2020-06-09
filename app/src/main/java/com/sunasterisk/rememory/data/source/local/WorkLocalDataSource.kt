@@ -12,14 +12,27 @@ class WorkLocalDataSource private constructor(
 ) : WorkDataSource.Local {
 
     override fun getAllWorks(callback: OnDataLoadedCallback<List<Work>>) {
-        LocalAsyncTask<EmptyInput, List<Work>>(callback){
+        LocalAsyncTask<EmptyInput, List<Work>>(callback) {
             workDao.getAllWorks()
         }.execute(EmptyInput)
     }
-    override fun getWorks(workId: String, callback: OnDataLoadedCallback<List<Work>>) {
-        LocalAsyncTask<EmptyInput, List<Work>>(callback) {
+
+    override fun getWorks(workId: String, callback: OnDataLoadedCallback<Work>) {
+        LocalAsyncTask<EmptyInput, Work>(callback) {
             workDao.getWorks(workId)
         }.execute(EmptyInput)
+    }
+
+    override fun getProgressInDay(day: String, callback: OnDataLoadedCallback<Int>) {
+        LocalAsyncTask<String, Int>(callback) {
+            workDao.getProgressInDay(day)
+        }.execute(day)
+    }
+
+    override fun updateProgress(id: String, callback: OnDataLoadedCallback<Boolean>) {
+        LocalAsyncTask<String, Boolean>(callback) {
+            workDao.updateProgress(id)
+        }.execute(id)
     }
 
     override fun addWork(work: Work, callback: OnDataLoadedCallback<Boolean>) {
@@ -29,11 +42,15 @@ class WorkLocalDataSource private constructor(
     }
 
     override fun deleteWork(workId: String, callback: OnDataLoadedCallback<Boolean>) {
-        TODO("Not yet implemented")
+        LocalAsyncTask<String, Boolean>(callback) {
+            workDao.deleteWork(workId)
+        }.execute(workId)
     }
 
-    override fun updateWork(work: Work, callback: OnDataLoadedCallback<Work>) {
-        TODO("Not yet implemented")
+    override fun updateWork(work: Work, callback: OnDataLoadedCallback<Boolean>) {
+        LocalAsyncTask<Work, Boolean>(callback) {
+            workDao.updateWork(work)
+        }.execute(work)
     }
 
     companion object {

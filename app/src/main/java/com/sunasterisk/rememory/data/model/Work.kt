@@ -8,7 +8,8 @@ data class Work(
     var workDetails: String = "",
     var workDate: String = "",
     var workProgress: Int = 0,
-    var workEvaluate: String = "",
+    var workRushEvaluate: String = "",
+    var workImportantEvaluate: String = "",
     var workClassify: String = ""
 ) {
 
@@ -17,7 +18,8 @@ data class Work(
         workDetails = cursor.getString(cursor.getColumnIndex(WORK)),
         workDate = cursor.getString(cursor.getColumnIndex(DATE)),
         workProgress = cursor.getInt(cursor.getColumnIndex(PROGRESS)),
-        workEvaluate = cursor.getString(cursor.getColumnIndex(EVALUATE)),
+        workRushEvaluate = cursor.getString(cursor.getColumnIndex(EVALUATE_RUSH)),
+        workImportantEvaluate = cursor.getString(cursor.getColumnIndex(EVALUATE_IMPORTANT)),
         workClassify = cursor.getString(cursor.getColumnIndex(CLASSIFY))
     )
 
@@ -25,7 +27,8 @@ data class Work(
         put(WORK, workDetails)
         put(DATE, workDate)
         put(PROGRESS, workProgress)
-        put(EVALUATE, workEvaluate)
+        put(EVALUATE_RUSH, workRushEvaluate)
+        put(EVALUATE_IMPORTANT, workImportantEvaluate)
         put(CLASSIFY, workClassify)
     }
 
@@ -35,7 +38,8 @@ data class Work(
         const val WORK = "workDetails"
         const val DATE = "workDate"
         const val PROGRESS = "workProgress"
-        const val EVALUATE = "workEvaluate"
+        const val EVALUATE_RUSH = "workRushEvaluate"
+        const val EVALUATE_IMPORTANT = "workImportantEvaluate"
         const val CLASSIFY = "workClassify"
     }
 }

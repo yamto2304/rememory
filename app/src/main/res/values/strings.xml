@@ -11,12 +11,24 @@
     <string name="title_rush_evaluate">Is it rush ?</string>
     <string name="title_important_evaluate">Is it important ?</string>
     <string name="title_classify">Classify</string>
-    <string name="title_evaluate_rush">Is it Rush? </string>
-    <string name="title_evaluate_important">Is it Important? </string>
+    <string name="title_evaluate_rush">Is Rush?</string>
+    <string name="title_evaluate_important">Is Important?</string>
     <string name="evaluate_rush">Rush !!!</string>
     <string name="evaluate_not_rush">Not Rush</string>
     <string name="evaluate_important">Important !!!</string>
     <string name="evaluate_not_important">Not Important</string>
     <string name="notify_insert_success">Insert success !</string>
     <string name="notify_insert_failed">Insert failed !</string>
+    <string name="title_evaluate">Evaluate</string>
+    <string name="time_create">"Time Create : "</string>
+    <string name="title_edit">Edit</string>
+    <string name="title_delete">Delete</string>
+    <string name="exit_string">X</string>
+    <string name="text1_progress">You have completed</string>
+    <string name="text2_progress">Of works !</string>
+    <string name="add_work">Add a work need to do !</string>
+    <string name="let_s_do">Let\'s do</string>
+    <string name="your_progress">Your Progress</string>
+    <string name="notify_update_success">Update success !</string>
+    <string name="notify_update_failed">Update Failed !</string>
 </resources>

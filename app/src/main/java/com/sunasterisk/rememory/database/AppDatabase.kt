@@ -31,7 +31,8 @@ object AppDatabase {
     const val COL_DETAILS_WORK = "workDetails"
     const val COL_DATE_WORK = "workDate"
     const val COL_PROGRESS_WORK = "workProgress"
-    const val COL_EVALUATE_WORK = "workEvaluate"
+    const val COL_EVALUATE_RUSH_WORK = "workRushEvaluate"
+    const val COL_EVALUATE_IMPORTANT_WORK = "workImportantEvaluate"
     const val COL_CLASSIFY_WORK = "workClassify"
 
     const val CREATE_TABLE_WORKS = "CREATE TABLE $TABLE_WORKS (" +
@@ -39,7 +40,8 @@ object AppDatabase {
             "$COL_DETAILS_WORK TEXT, " +
             "$COL_DATE_WORK TEXT, " +
             "$COL_PROGRESS_WORK TEXT, " +
-            "$COL_EVALUATE_WORK TEXT, " +
+            "$COL_EVALUATE_RUSH_WORK TEXT, " +
+            "$COL_EVALUATE_IMPORTANT_WORK TEXT, " +
             "$COL_CLASSIFY_WORK TEXT)"
 
     private const val TABLE_HISTORY = "History"

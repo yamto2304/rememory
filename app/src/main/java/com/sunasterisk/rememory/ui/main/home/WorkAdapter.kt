@@ -8,7 +8,6 @@ import com.sunasterisk.rememory.R
 import com.sunasterisk.rememory.data.model.Work
 import kotlinx.android.synthetic.main.work_item.view.*
 
-
 class WorkAdapter : RecyclerView.Adapter<WorkAdapter.WorkViewHolder>() {
 
     private val works = mutableListOf<Work>()
@@ -28,9 +27,9 @@ class WorkAdapter : RecyclerView.Adapter<WorkAdapter.WorkViewHolder>() {
         holder.bindData(works[position])
     }
 
-    fun updateData(newArrTopics: List<Work>) {
+    fun updateData(newArrWorks: List<Work>) {
         works.clear()
-        works.addAll(newArrTopics)
+        works.addAll(newArrWorks)
         notifyDataSetChanged()
     }
 
@@ -47,7 +46,9 @@ class WorkAdapter : RecyclerView.Adapter<WorkAdapter.WorkViewHolder>() {
         }
 
         fun bindData(works: Work) {
+            val progressWork: Boolean = (works.workProgress == 1)
             itemView.title_text.text = works.workDetails
+            itemView.complete_checkbox.isChecked = progressWork
         }
     }
 

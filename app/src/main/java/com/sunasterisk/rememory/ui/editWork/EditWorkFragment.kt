@@ -1,8 +1,6 @@
-package com.sunasterisk.rememory.ui.addwork
+package com.sunasterisk.rememory.ui.editWork
 
 import android.annotation.SuppressLint
-import android.content.Context
-import android.content.Intent
 import android.widget.PopupMenu
 import com.sunasterisk.rememory.BaseFragment
 import com.sunasterisk.rememory.R
@@ -13,24 +11,31 @@ import com.sunasterisk.rememory.data.source.local.dao.WorkDaoImpl
 import com.sunasterisk.rememory.database.SQLiteHelper
 import com.sunasterisk.rememory.toast
 import com.sunasterisk.rememory.ui.main.MainActivity
-import kotlinx.android.synthetic.main.fragment_add_work.*
+import kotlinx.android.synthetic.main.fragment_add_work.addWorkEditText
+import kotlinx.android.synthetic.main.fragment_add_work.buttonBack
+import kotlinx.android.synthetic.main.fragment_add_work.buttonClassify
+import kotlinx.android.synthetic.main.fragment_add_work.buttonImportantEvaluate
+import kotlinx.android.synthetic.main.fragment_add_work.buttonRushEvaluate
+import kotlinx.android.synthetic.main.fragment_edit_work.*
 import java.text.SimpleDateFormat
 import java.util.*
 
-class AddWorkFragment : BaseFragment(), AddWorkContract.View {
-    override val layoutResource get() = R.layout.fragment_add_work
+class EditWorkFragment : BaseFragment(), EditWorkContract.View {
+
+    override val layoutResource get() = R.layout.fragment_edit_work
     override fun initComponent() {
+        context?.toast("UpdateWork")
         initDatabase()
         showClassifyMenu()
         showRushEvaluateMenu()
         showImportantEvaluateMenu()
-        insertWork()
-        buttonBack.setOnClickListener{
+        updateWork()
+        buttonBack.setOnClickListener {
             startActivity(context?.let { MainActivity.getIntent(it) })
         }
     }
 
-    private var presenter: AddWorkContract.Presenter? = null
+    private var presenter: EditWorkContract.Presenter? = null
     private fun initDatabase() {
         context?.let {
             val db = SQLiteHelper.getInstance(it)
@@ -38,24 +43,31 @@ class AddWorkFragment : BaseFragment(), AddWorkContract.View {
             val localRepository = WorksRepository.getInstance(
                 local = WorkLocalDataSource.getInstance(worksDao)
             )
-            presenter = AddWorkPresenter(this, localRepository)
+            presenter = EditWorkPresenter(this, localRepository)
         }
     }
 
     @SuppressLint("SimpleDateFormat")
-    private fun insertWork() {
+    private fun updateWork() {
         val formatDate = SimpleDateFormat("dd:MM:yyyy")
-        buttonAddNewWork.setOnClickListener {
+
+        buttonUpdateNewWork.setOnClickListener {
             if (addWorkEditText.text.toString().trim().isEmpty()) {
                 showMess("Work Details can't be empty !")
-            }else if(buttonClassify.text.toString().trim().isEmpty() || buttonClassify.text == "Classify") {
+            } else if (buttonClassify.text.toString().trim()
+                    .isEmpty() || buttonClassify.text == "Classify"
+            ) {
                 showMess("Please Classify the Work !")
-            }else if(buttonRushEvaluate.text.toString().trim().isEmpty() || buttonRushEvaluate.text == "Is Rush?") {
+            } else if (buttonRushEvaluate.text.toString().trim()
+                    .isEmpty() || buttonRushEvaluate.text == "Is Rush?"
+            ) {
                 showMess("Please Evaluate the Work !")
-            }else if(buttonImportantEvaluate.text.toString().trim().isEmpty() || buttonImportantEvaluate.text == "Is Important?") {
+            } else if (buttonImportantEvaluate.text.toString().trim()
+                    .isEmpty() || buttonImportantEvaluate.text == "Is Important?"
+            ) {
                 showMess("Please Evaluate the Work !")
             } else {
-                presenter?.addWork(
+                presenter?.updateWork(
                     Work(
                         "",
                         addWorkEditText.text.toString(),
@@ -73,7 +85,7 @@ class AddWorkFragment : BaseFragment(), AddWorkContract.View {
 
     @SuppressLint("SetTextI18n")
     private fun showClassifyMenu() {
-        buttonClassify.setOnClickListener {
+        buttonClassify1.setOnClickListener {
             val classifyMenu = PopupMenu(activity, buttonClassify)
             classifyMenu.apply {
                 menuInflater.inflate(R.menu.classify_menu, classifyMenu.menu)
@@ -93,7 +105,7 @@ class AddWorkFragment : BaseFragment(), AddWorkContract.View {
 
     @SuppressLint("SetTextI18n")
     private fun showRushEvaluateMenu() {
-        buttonRushEvaluate.setOnClickListener {
+        buttonRushEvaluate1.setOnClickListener {
             val evaluateRushMenu = PopupMenu(activity, buttonRushEvaluate)
             evaluateRushMenu.apply {
                 menuInflater.inflate(R.menu.rush_evaluate_menu, evaluateRushMenu.menu)
@@ -110,7 +122,7 @@ class AddWorkFragment : BaseFragment(), AddWorkContract.View {
     }
 
     private fun showImportantEvaluateMenu() {
-        buttonImportantEvaluate.setOnClickListener {
+        buttonImportantEvaluate1.setOnClickListener {
             val evaluateMenu = PopupMenu(activity, buttonImportantEvaluate)
             evaluateMenu.apply {
                 menuInflater.inflate(R.menu.important_evaluate_menu, evaluateMenu.menu)
@@ -134,10 +146,7 @@ class AddWorkFragment : BaseFragment(), AddWorkContract.View {
         context?.toast(exception.message.toString())
     }
 
-    private fun showMess(mess: String){
+    private fun showMess(mess: String) {
         context?.toast(mess)
-    }
-    companion object {
-        fun getIntent(context: Context): Intent = Intent(context, AddWorkFragment::class.java)
     }
 }

@@ -7,11 +7,20 @@ class WorksRepository private constructor(
     private val local: WorkDataSource.Local
 ) : WorkDataSource.Local {
 
-    override fun getAllWorks(callback: OnDataLoadedCallback<List<Work>>){
+    override fun getAllWorks(callback: OnDataLoadedCallback<List<Work>>) {
         local.getAllWorks(callback)
     }
-    override fun getWorks(workId: String, callback: OnDataLoadedCallback<List<Work>>) {
+
+    override fun getWorks(workId: String, callback: OnDataLoadedCallback<Work>) {
         local.getWorks(workId, callback)
+    }
+
+    override fun getProgressInDay(day: String, callback: OnDataLoadedCallback<Int>) {
+        local.getProgressInDay(day, callback)
+    }
+
+    override fun updateProgress(id: String, callback: OnDataLoadedCallback<Boolean>) {
+        local.updateProgress(id, callback)
     }
 
     override fun addWork(work: Work, callback: OnDataLoadedCallback<Boolean>) {
@@ -19,11 +28,11 @@ class WorksRepository private constructor(
     }
 
     override fun deleteWork(workId: String, callback: OnDataLoadedCallback<Boolean>) {
-        TODO("Not yet implemented")
+        local.deleteWork(workId, callback)
     }
 
-    override fun updateWork(work: Work, callback: OnDataLoadedCallback<Work>) {
-        TODO("Not yet implemented")
+    override fun updateWork(work: Work, callback: OnDataLoadedCallback<Boolean>) {
+        local.updateWork(work, callback)
     }
 
     companion object {

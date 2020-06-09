@@ -4,17 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/addFrag"
     tools:context=".ui.main.MainActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarAdd"
         android:layout_width="0dp"
         android:layout_height="?actionBarSize"
-        android:background="@color/color_primary"
+        android:background="#39BC2A"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:subtitleTextColor="@color/color_primary"
+        app:subtitleTextColor="@color/color_app"
         app:titleTextColor="@android:color/black">
 
         <TextView
@@ -22,9 +23,9 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/dp_20"
             android:gravity="center"
-            android:text="@string/app_name"
+            android:text="@string/let_s_do"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/sp_40" />
+            android:textSize="@dimen/sp_30" />
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.core.widget.NestedScrollView
@@ -32,10 +33,13 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarAdd">
+        app:layout_constraintTop_toBottomOf="@+id/toolbarAdd"
+        app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constrainLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -43,11 +47,12 @@
                 android:id="@+id/addWorkEditText"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_195"
-                android:layout_marginTop="@dimen/dp_25"
                 android:layout_marginStart="@dimen/dp_25"
+                android:layout_marginTop="@dimen/dp_25"
                 android:layout_marginEnd="@dimen/dp_25"
                 android:gravity="center"
-                android:hint="@string/app_name"
+                android:hint="@string/add_work"
+                android:background="@drawable/border_edit_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +63,8 @@
                 android:layout_width="@dimen/dp_250"
                 android:layout_height="@dimen/dp_80"
                 android:layout_marginTop="@dimen/dp_16"
-                android:text="@string/title_rush_evaluate"
+                android:background="@drawable/border_edit_text"
+                android:text="@string/title_evaluate_rush"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/buttonClassify" />
@@ -68,8 +74,9 @@
                 android:layout_width="@dimen/dp_250"
                 android:layout_height="@dimen/dp_80"
                 android:layout_marginTop="@dimen/dp_16"
-                android:text="@string/title_important_evaluate"
+                android:text="@string/title_evaluate_important"
                 app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@drawable/border_edit_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/buttonRushEvaluate" />
@@ -80,6 +87,7 @@
                 android:layout_height="@dimen/dp_80"
                 android:layout_marginTop="@dimen/dp_16"
                 android:text="@string/title_classify"
+                android:background="@drawable/border_edit_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/addWorkEditText" />
@@ -88,13 +96,27 @@
                 android:id="@+id/buttonAddNewWork"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dp_195"
+                android:layout_marginTop="4dp"
                 android:layout_marginEnd="@dimen/dp_16"
+                android:backgroundTint="@color/color_fab"
+                app:layout_anchor="@id/addWorkEditText"
+                app:layout_anchorGravity="bottom|right|end"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/addWorkEditText"
+                app:layout_constraintVertical_bias="0.0"
                 app:srcCompat="@drawable/ic_done_black_24dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/buttonBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/color_tool_bar"
+        app:layout_constraintStart_toStartOf="@+id/toolbarAdd"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow_back_24" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

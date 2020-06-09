@@ -10,5 +10,18 @@
     <color name="color_orange_peel">#FF9900</color>
     <color name="color_pastel_green">#77D353</color>
     <color name="color_carnation">#F95F62</color>
-    <color name="color_grey">#757575</color>
+    <color name="color_grey">#FF6FE6AD</color>
+    <color name="color_white">#DDDDDD</color>
+    <color name="color_little_blue">#49acd5</color>
+    <color name="color_tool_bar">#77D353</color>
+    <color name="color_orange">#eaad43</color>
+    <color name="color_button">#898989</color>
+    <color name="background_details">#FFC1C1</color>
+    <color name="color_light_green">#90EE90</color>
+    <color name="color_pink3">#CD919E</color>
+    <color name="color_app">#39BC2A</color>
+    <color name="color_fab">#7E96CD</color>
+    <color name="color_red">#E63333</color>
+    <color name="color_white_grey">#DDDDDD</color>
+    <color name="color_full_back">#000000</color>
 </resources>
